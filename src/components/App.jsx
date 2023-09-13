@@ -3,16 +3,27 @@ import { Personal } from "./Personal";
 import Cv from "./Cv";
 function App() {
   const [cvActive, setCvActive] = useState(false);
-  const [nameValue, setValue] = useState("");
-  const handleChange = (e) => {
-    setValue(e.target.value);
+  const [nameValue, setName] = useState("");
+  const [emailValue, setEmail] = useState("");
+
+  const handleChangeName = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleChangeEmail = (e) => {
+    setEmail(e.target.value);
   };
 
   return (
     <>
       <button onClick={() => setCvActive(!cvActive)}>Preview</button>
-      <Personal handleChange={handleChange} nameValue={nameValue} />
-      {cvActive && <Cv name={nameValue}></Cv>}
+      <Personal
+        handleChangeName={handleChangeName}
+        nameValue={nameValue}
+        handleChangeEmail={handleChangeEmail}
+        emailValue={emailValue}
+      />
+      {cvActive && <Cv name={nameValue} email={emailValue}></Cv>}
     </>
   );
 }

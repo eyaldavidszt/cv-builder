@@ -1,5 +1,10 @@
 /* eslint-disable react/prop-types */
-function Personal({ handleChange, nameValue }) {
+function Personal({
+  handleChangeName,
+  nameValue,
+  handleChangeEmail,
+  emailValue,
+}) {
   return (
     <>
       <label htmlFor="name">name: </label>
@@ -9,7 +14,16 @@ function Personal({ handleChange, nameValue }) {
         name="name"
         autoComplete="off"
         value={nameValue}
-        onChange={handleChange}
+        onChange={handleChangeName}
+      />
+      <label htmlFor="email">email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        autoComplete="off"
+        value={emailValue}
+        onChange={handleChangeEmail}
       />
     </>
   );

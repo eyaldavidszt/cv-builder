@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
-export default function Cv({ name, email }) {
+export default function Cv({ name, email, address }) {
   return (
     <>
-      <h1>{name}</h1>
-      <h2>{email}</h2>
+      <h1>name: {name}</h1>
+      <h2>email: {email}</h2>
+      <address>
+        <h3>address: {address}</h3>
+      </address>
     </>
   );
 }

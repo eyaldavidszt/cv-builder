@@ -5,6 +5,7 @@ function App() {
   const [cvActive, setCvActive] = useState(false);
   const [nameValue, setName] = useState("");
   const [emailValue, setEmail] = useState("");
+  const [addressValue, setAddress] = useState("");
 
   const handleChangeName = (e) => {
     setName(e.target.value);
@@ -13,17 +14,26 @@ function App() {
   const handleChangeEmail = (e) => {
     setEmail(e.target.value);
   };
+  const handleChangeAddress = (e) => {
+    setAddress(e.target.value);
+  };
 
   return (
     <>
-      <button onClick={() => setCvActive(!cvActive)}>Preview</button>
+      <button onClick={() => setCvActive(!cvActive)}>
+        {cvActive ? "hide preview" : "preview"}
+      </button>
       <Personal
         handleChangeName={handleChangeName}
         nameValue={nameValue}
         handleChangeEmail={handleChangeEmail}
         emailValue={emailValue}
+        handleChangeAddress={handleChangeAddress}
+        addressValue={addressValue}
       />
-      {cvActive && <Cv name={nameValue} email={emailValue}></Cv>}
+      {cvActive && (
+        <Cv name={nameValue} email={emailValue} address={addressValue}></Cv>
+      )}
     </>
   );
 }

@@ -4,6 +4,8 @@ function Personal({
   nameValue,
   handleChangeEmail,
   emailValue,
+  handleChangeAddress,
+  addressValue,
 }) {
   return (
     <>
@@ -24,6 +26,15 @@ function Personal({
         autoComplete="off"
         value={emailValue}
         onChange={handleChangeEmail}
+      />
+      <label htmlFor="address">address:</label>
+      <input
+        type="text"
+        id="address"
+        name="address"
+        autoComplete="off"
+        value={addressValue}
+        onChange={handleChangeAddress}
       />
     </>
   );

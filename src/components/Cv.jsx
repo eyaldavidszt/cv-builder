@@ -14,7 +14,14 @@ export default function Cv({ name, email, address, educations }) {
         <h1>Education</h1>
         <ul>
           {educations.map((education) => {
-            return <li key={education.id}>{education.school}</li>;
+            return (
+              <li key={education.id}>
+                <>
+                  <h2>school: {education.school}</h2>
+                  <h2>degree: {education.degree}</h2>
+                </>
+              </li>
+            );
           })}
         </ul>
       </section>

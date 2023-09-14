@@ -2,6 +2,8 @@
 export default function Education({
   school,
   handleChangeSchool,
+  degree,
+  handleChangeDegree,
   handleAddEducation,
 }) {
   return (
@@ -14,6 +16,15 @@ export default function Education({
         autoComplete="off"
         onChange={handleChangeSchool}
         value={school}
+      />
+      <label htmlFor="degree">Degree: </label>
+      <input
+        type="text"
+        id="degree"
+        name="degree"
+        autoComplete="off"
+        onChange={handleChangeDegree}
+        value={degree}
       />
       <button onClick={handleAddEducation}>Add education</button>
     </div>

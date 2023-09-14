@@ -11,6 +11,8 @@ function App() {
 
   const [educations, setEducations] = useState([]);
   const [school, setSchool] = useState("");
+  const [degree, setDegree] = useState("");
+
   // we are changing educations on "add education" button click
   // handleAddEducation = make new education array and pass it into setEducations...
   // but how do we append the new Education object? how do we get the inputs data?
@@ -32,12 +34,17 @@ function App() {
     const toAppend = {};
     console.log(school);
     toAppend["school"] = school;
+    toAppend["degree"] = degree;
     toAppend["id"] = uuidv4();
     array.push(toAppend);
     setEducations(array);
   };
   const handleChangeSchool = (e) => {
     setSchool(e.target.value);
+  };
+
+  const handleChangeDegree = (e) => {
+    setDegree(e.target.value);
   };
 
   return (
@@ -55,7 +62,9 @@ function App() {
       />
       <Education
         school={school}
+        degree={degree}
         handleChangeSchool={handleChangeSchool}
+        handleChangeDegree={handleChangeDegree}
         handleAddEducation={handleAddEducation}
       />
       {cvActive && (

@@ -39,6 +39,11 @@ function App() {
     array.push(toAppend);
     setEducations(array);
   };
+  const handleRemoveEducation = (e) => {
+    const prevArray = [...educations];
+    const array = prevArray.filter((education) => education.id !== e.target.id);
+    setEducations(array);
+  };
   const handleChangeSchool = (e) => {
     setSchool(e.target.value);
   };
@@ -73,6 +78,7 @@ function App() {
           email={emailValue}
           address={addressValue}
           educations={educations}
+          handleRemoveEducation={handleRemoveEducation}
         />
       )}
     </>

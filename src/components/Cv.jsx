@@ -1,5 +1,11 @@
 /* eslint-disable react/prop-types */
-export default function Cv({ name, email, address, educations }) {
+export default function Cv({
+  name,
+  email,
+  address,
+  educations,
+  handleRemoveEducation,
+}) {
   return (
     <div>
       <section>
@@ -19,6 +25,9 @@ export default function Cv({ name, email, address, educations }) {
                 <>
                   <h2>school: {education.school}</h2>
                   <h2>degree: {education.degree}</h2>
+                  <button id={education.id} onClick={handleRemoveEducation}>
+                    Remove
+                  </button>
                 </>
               </li>
             );

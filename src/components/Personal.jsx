@@ -9,7 +9,7 @@ function Personal({
 }) {
   return (
     <>
-      <label htmlFor="name">name: </label>
+      <label htmlFor="name"> name: </label>
       <input
         type="text"
         id="name"
@@ -18,7 +18,7 @@ function Personal({
         value={nameValue}
         onChange={handleChangeName}
       />
-      <label htmlFor="email">email:</label>
+      <label htmlFor="email">email: </label>
       <input
         type="email"
         id="email"
@@ -27,7 +27,7 @@ function Personal({
         value={emailValue}
         onChange={handleChangeEmail}
       />
-      <label htmlFor="address">address:</label>
+      <label htmlFor="address">address: </label>
       <input
         type="text"
         id="address"

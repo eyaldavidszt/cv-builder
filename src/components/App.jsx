@@ -4,6 +4,7 @@ import { Personal } from "./Personal";
 import Education from "./Education";
 import Cv from "./Cv";
 import { Fragment } from "react";
+import "../styles/app.css";
 function App() {
   const [cvActive, setCvActive] = useState(false);
   const [nameValue, setName] = useState("");

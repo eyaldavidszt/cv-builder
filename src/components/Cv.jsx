@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import "../styles/cv.css";
+
 export default function Cv({
   name,
   email,

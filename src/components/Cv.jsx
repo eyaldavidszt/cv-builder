@@ -25,6 +25,8 @@ export default function Cv({
                 <>
                   <h2>school: {education.school}</h2>
                   <h2>degree: {education.degree}</h2>
+                  <h2>From: {education.starting}</h2>
+                  <h2>To: {education.ending}</h2>
                   <button id={education.id} onClick={handleRemoveEducation}>
                     Remove
                   </button>

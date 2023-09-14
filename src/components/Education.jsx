@@ -4,6 +4,10 @@ export default function Education({
   handleChangeSchool,
   degree,
   handleChangeDegree,
+  startingYear,
+  handleChangeStartingYear,
+  endingYear,
+  handleChangeEndingYear,
   handleAddEducation,
 }) {
   return (
@@ -25,6 +29,24 @@ export default function Education({
         autoComplete="off"
         onChange={handleChangeDegree}
         value={degree}
+      />
+      <label htmlFor="starting">From year: </label>
+      <input
+        type="text"
+        id="starting"
+        name="starting"
+        autoComplete="off"
+        value={startingYear}
+        onChange={handleChangeStartingYear}
+      />
+      <label htmlFor="ending">To: </label>
+      <input
+        type="text"
+        id="ending"
+        name="starting"
+        autoComplete="off"
+        value={endingYear}
+        onChange={handleChangeEndingYear}
       />
       <button onClick={handleAddEducation}>Add education</button>
     </div>

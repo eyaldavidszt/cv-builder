@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Personal } from "./Personal";
 import Education from "./Education";
 import Cv from "./Cv";
+import { Fragment } from "react";
 function App() {
   const [cvActive, setCvActive] = useState(false);
   const [nameValue, setName] = useState("");
@@ -69,25 +70,29 @@ function App() {
       <button onClick={() => setCvActive(!cvActive)}>
         {cvActive ? "hide preview" : "preview"}
       </button>
-      <Personal
-        handleChangeName={handleChangeName}
-        nameValue={nameValue}
-        handleChangeEmail={handleChangeEmail}
-        emailValue={emailValue}
-        handleChangeAddress={handleChangeAddress}
-        addressValue={addressValue}
-      />
-      <Education
-        school={school}
-        degree={degree}
-        startingYear={startingYear}
-        endingYear={endingYear}
-        handleChangeEndingYear={handleChangeEndingYear}
-        handleChangeStartingYear={handleChangeStartingYear}
-        handleChangeSchool={handleChangeSchool}
-        handleChangeDegree={handleChangeDegree}
-        handleAddEducation={handleAddEducation}
-      />
+      {!cvActive && (
+        <Fragment>
+          <Personal
+            handleChangeName={handleChangeName}
+            nameValue={nameValue}
+            handleChangeEmail={handleChangeEmail}
+            emailValue={emailValue}
+            handleChangeAddress={handleChangeAddress}
+            addressValue={addressValue}
+          />
+          <Education
+            school={school}
+            degree={degree}
+            startingYear={startingYear}
+            endingYear={endingYear}
+            handleChangeEndingYear={handleChangeEndingYear}
+            handleChangeStartingYear={handleChangeStartingYear}
+            handleChangeSchool={handleChangeSchool}
+            handleChangeDegree={handleChangeDegree}
+            handleAddEducation={handleAddEducation}
+          />
+        </Fragment>
+      )}
       {cvActive && (
         <Cv
           name={nameValue}
